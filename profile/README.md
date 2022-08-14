@@ -25,7 +25,7 @@ monitor CommandsMustSucceed {
 
 The following figure presents the architecture of LogScope.
 
-<p><img src="architecture2.png" alt="architecture"></p>
+![architecture](architecture2.png)
 
 The monitor specifications, written in the Scope specification language by a user, is by the frontend
 (written in the Scala programming language) translated into C++, stored in the file `contract.cpp`. The backend compiles with the `contract.cpp` file, as well as with a main program in the `main.cpp` file, also written by a user. This main program is responsible for obtaining events E1, E2, ... from the system under observation,  and forwarding them to the backend, which then monitors them using the contract in `contract.cpp`.
@@ -35,11 +35,9 @@ Each monitor in `contract.cpp` maintains an internal memory, called the frontier
 ## Manual and Instructions
 
 
-A user manual can be found here: <a href="https://github.jpl.nasa.gov/logscope/frontend/tree/master/manual/logscope_manual.pdf">[pdf]
+A user manual can be found [here](https://github.com/logscope/frontend/blob/main/logscope_manual.pdf). 
+
 General instructions for installation and use are described in the manual, as well as in the `README.md` files in the frontend and backend repositories below.
 
-
-
-<a href="https://github.com/havelund/logscope">earlier version of LogScope</a> was implemented in Python around 2008, and was used for a period by MSL's FIT (Functional Integration Testing) team.</p>
-      </section>
-    </div>
+An [earlier version](https://github.com/havelund/logscope) of LogScope was implemented in Python around 2008 in pure Python.
+ 
