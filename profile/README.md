@@ -1,6 +1,6 @@
 # LogScope
 
-LogScope supports analysis of event streams, such as e.g. telemetry streams from spacecraft and planetary rovers. The tool takes as input a specification of the properties that an event stream must satisfy,
+LogScope supports analysis of event streams. The tool takes as input a specification of the properties that an event stream must satisfy,
 as well as an event stream, and produces as output a report on violations of the specification. LogScope can be applied
 in <em>online</em> mode, monitoring an application as it executes, or offline, reading the event stream from a log file. During online monitoring of a C or C++ application, feedback to the monitored application is feasible as the monitoring engine is implemented in C++.
 
@@ -11,12 +11,12 @@ The Logscope Specification Language merges rule-based programming with state mac
 ```
 monitor CommandsMustSucceed {
   always {
-    COMMAND(name : x) =&gt; RequireSuccess(x)
+    COMMAND(name : x) => RequireSuccess(x)
   }
 
   hot RequireSuccess(cmdName) {
-    FAIL(name : cmdName) =&gt; error
-    SUCCESS(name : cmdName) =&gt; ok
+    FAIL(name : cmdName) => error
+    SUCCESS(name : cmdName) => ok
   }
 }
 ```
@@ -37,7 +37,7 @@ Each monitor in `contract.cpp` maintains an internal memory, called the frontier
 
 A user manual can be found [here](https://github.com/logscope/frontend/blob/main/logscope_manual.pdf). 
 
-General instructions for installation and use are described in the manual, as well as in the `README.md` files in the frontend and backend repositories below.
+General instructions for installation and use are described in the manual, as well as in the `README.md` files in the frontend and backend repositories.
 
-An [earlier version](https://github.com/havelund/logscope) of LogScope was implemented in Python around 2008 in pure Python.
+An [earlier version](https://github.com/havelund/logscope) of LogScope was implemented in Python around 2008.
  
